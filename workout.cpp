@@ -58,6 +58,7 @@ void workout::generate_workout()
         // split by 200 yards, 100 yards, 75 yards, or 50 yards
         cur_length = diff_lengths[rand() % 4];
 
+        // choose how many times
         if (cur_length == 200)
         {
             cur_times = diff_times[rand() % 2];
@@ -70,9 +71,6 @@ void workout::generate_workout()
         {
             cur_times = diff_times[rand() % 3] + 3;
         }
-
-        // choose how many times 
-        cur_times = diff_times[rand() % 3];
  
         remaining_yards = remaining_yards - (cur_length * cur_times);
         total_yards = total_yards + (cur_length * cur_times);
