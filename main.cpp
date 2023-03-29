@@ -24,5 +24,5 @@ int main()
     workout *w = new workout(yards, difficulty);
     w->generate_workout();
 
-    return 1;
+    return 0;
 }

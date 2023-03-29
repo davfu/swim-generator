@@ -37,7 +37,7 @@ void workout::generate_workout()
     // diff possible strokes based on difficulty
     string diff_strokes[6] = {"Freestyle", "Kick", "Breaststroke", "IM", "IM", "Butterfly"};
     int diff_lengths[4] = {50, 75, 100, 200};
-    int diff_times[3] = {2, 3, 4};
+    int diff_times[6] = {2, 3, 5, 4, 6, 8};
      
     string cur_stroke;
     int cur_length;
@@ -57,6 +57,19 @@ void workout::generate_workout()
 
         // split by 200 yards, 100 yards, 75 yards, or 50 yards
         cur_length = diff_lengths[rand() % 4];
+
+        if (cur_length == 200)
+        {
+            cur_times = diff_times[rand() % 2];
+        }
+        else if (cur_length == 100)
+        {
+            cur_times = diff_times[rand() % 3] + 2;
+        }
+        else
+        {
+            cur_times = diff_times[rand() % 3] + 3;
+        }
 
         // choose how many times 
         cur_times = diff_times[rand() % 3];
