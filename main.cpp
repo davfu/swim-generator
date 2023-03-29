@@ -5,15 +5,6 @@
 #include "workout.h"
 using namespace std;
 
-void prompt_user(int& yards, int& difficulty)
-{
-    cout << "Enter approximate distance of workout (over 1000 yards): ";
-    cin >> yards;
-    cout << "Enter difficulty of workout [1 (easy), 2 (medium), 3 (hard)]: ";
-    cin >> difficulty;
-    cout << endl;
-}
-
 int main()
 {
     cout << endl;
@@ -24,7 +15,11 @@ int main()
     int yards;
     int difficulty;
 
-    prompt_user(yards, difficulty); 
+    cout << "Enter approximate distance of workout (over 1000 yards): ";
+    cin >> yards;
+    cout << "Enter difficulty of workout [1 (easy), 2 (medium), 3 (hard)]: ";
+    cin >> difficulty;
+    cout << endl;
 
     workout *w = new workout(yards, difficulty);
     w->generate_workout();
